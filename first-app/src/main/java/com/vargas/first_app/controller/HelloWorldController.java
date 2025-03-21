@@ -1,5 +1,6 @@
 package com.vargas.first_app.controller;
 
+import com.vargas.first_app.domain.User;
 import com.vargas.first_app.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,8 @@ public class HelloWorldController {
     }
 
     @PostMapping("")
-    public String helloWorldPost(@RequestBody String body){
-        return "Hello World Post";
+    public String helloWorldPost(@RequestBody User body){
+        return "Hello World " + body.getName();
     }
 
 }
