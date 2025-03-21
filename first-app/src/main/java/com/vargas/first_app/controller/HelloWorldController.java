@@ -23,9 +23,9 @@ public class HelloWorldController {
         return helloWorldService.helloWorld("leo");
     }
 
-    @PostMapping("")
-    public String helloWorldPost(@RequestBody User body){
-        return "Hello World " + body.getName();
+    @PostMapping("/{id}")
+    public String helloWorldPost(@PathVariable("id") String id, @RequestParam(value = "filter", defaultValue = "nenhum") String filter,@RequestBody User body){
+        return "Hello World " + body.getName() +  " " + id + " " + filter;
     }
 
 }
